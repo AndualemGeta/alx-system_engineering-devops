@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #show_your_bash_pid_made_easy
 
-pgrep "bash"
+pgrep -l "bash"
