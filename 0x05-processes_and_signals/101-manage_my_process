@@ -13,9 +13,8 @@ then
     echo "manage_my_process stopped"
 elif [ "$1" = "restart" ]
 then
-    xargs kill < "/var/run/my_process.pid"
-    rm /var/run/my_process.pid
-    ./manage_my_process &
+    "$0" stop >& /dev/null
+    "$0" start >& /dev/null
     echo $! >> /var/run/my_process.pid
     echo "manage_my_process restarted"
 else
